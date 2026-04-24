@@ -14,6 +14,8 @@ const NAV_ITEMS: Record<UserRole, { label: string; href: string; icon: string }[
     { label: 'Attendance', href: '/admin/attendance', icon: '✅' },
     { label: 'Fees', href: '/admin/fees', icon: '💰' },
     { label: 'Notices', href: '/admin/notices', icon: '📢' },
+    { label: 'Homework', href: '/admin/homework', icon: '📚' },
+    { label: 'Resources', href: '/admin/resources', icon: '🗂️' },
     { label: 'Reports', href: '/admin/reports', icon: '📋' },
   ],
   admin: [
@@ -25,6 +27,7 @@ const NAV_ITEMS: Record<UserRole, { label: string; href: string; icon: string }[
     { label: 'Fees', href: '/admin/fees', icon: '💰' },
     { label: 'Notices', href: '/admin/notices', icon: '📢' },
     { label: 'Homework', href: '/admin/homework', icon: '📚' },
+    { label: 'Resources', href: '/admin/resources', icon: '🗂️' },
     { label: 'Exams', href: '/admin/exams', icon: '📝' },
     { label: 'Reports', href: '/admin/reports', icon: '📋' },
   ],
