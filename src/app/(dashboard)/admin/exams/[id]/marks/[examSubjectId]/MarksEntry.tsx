@@ -29,9 +29,9 @@ export default function MarksEntry({
   const inputCls = 'w-24 px-2 py-1.5 border border-gray-200 rounded-lg text-sm text-center focus:outline-none focus:ring-2 focus:ring-amber-400'
 
   return (
-    <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
+    <div className="bg-white rounded-xl border border-gray-100 overflow-x-auto">
       <form action={saveMarks.bind(null, examSubjectId)}>
-        <table className="w-full">
+        <table className="w-full min-w-[480px]">
           <thead>
             <tr className="bg-gray-50 border-b border-gray-100">
               <th className="px-5 py-3 text-xs font-medium text-gray-500 uppercase text-left w-10">Roll</th>

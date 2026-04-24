@@ -74,7 +74,7 @@ export default function FeeReport({ rows, classSections, currentClass }: Props) 
           <p className="text-sm text-gray-400">No fee data found for the current session.</p>
         </div>
       ) : (
-        <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
+        <div className="bg-white rounded-xl border border-gray-100 overflow-x-auto">
           <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
             <p className="text-xs text-gray-500">
               {rows.length} records · Paid: {paidCount} · Partial: {partialCount} · Unpaid: {unpaidCount}

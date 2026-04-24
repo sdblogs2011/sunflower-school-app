@@ -20,7 +20,7 @@ export default function NewStaffPage() {
 
       <div className="bg-white rounded-xl border border-gray-100 p-6">
         <form action={createStaff} className="space-y-5">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelCls}>Employee ID</label>
               <input name="employee_id" className={inputCls} placeholder="e.g. EMP001" />
@@ -39,7 +39,7 @@ export default function NewStaffPage() {
             <input name="full_name" required className={inputCls} placeholder="Staff member's full name" />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelCls}>Mobile Number</label>
               <input name="mobile_number" type="tel" className={inputCls} placeholder="10-digit mobile" />
@@ -50,7 +50,7 @@ export default function NewStaffPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelCls}>Department</label>
               <input name="department" className={inputCls} placeholder="e.g. Primary, Secondary" />

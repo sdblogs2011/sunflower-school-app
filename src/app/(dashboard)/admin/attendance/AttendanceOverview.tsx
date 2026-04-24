@@ -18,18 +18,18 @@ export default function AttendanceOverview({ classes, defaultDate }: { classes: 
   return (
     <div>
       {/* Date picker + summary */}
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex gap-4">
-          <div className="bg-green-50 px-4 py-2.5 rounded-lg">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+        <div className="flex gap-3">
+          <div className="bg-green-50 px-4 py-2.5 rounded-lg flex-1 sm:flex-none">
             <p className="text-xs text-green-600 font-medium">Marked</p>
             <p className="text-2xl font-bold text-green-700">{marked}</p>
           </div>
-          <div className="bg-amber-50 px-4 py-2.5 rounded-lg">
+          <div className="bg-amber-50 px-4 py-2.5 rounded-lg flex-1 sm:flex-none">
             <p className="text-xs text-amber-600 font-medium">Pending</p>
             <p className="text-2xl font-bold text-amber-700">{pending}</p>
           </div>
-          <div className="bg-gray-50 px-4 py-2.5 rounded-lg">
-            <p className="text-xs text-gray-500 font-medium">Total Classes</p>
+          <div className="bg-gray-50 px-4 py-2.5 rounded-lg flex-1 sm:flex-none">
+            <p className="text-xs text-gray-500 font-medium">Total</p>
             <p className="text-2xl font-bold text-gray-700">{classes.length}</p>
           </div>
         </div>
@@ -41,8 +41,8 @@ export default function AttendanceOverview({ classes, defaultDate }: { classes: 
         />
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-100">
-        <table className="w-full">
+      <div className="bg-white rounded-xl border border-gray-100 overflow-x-auto">
+        <table className="w-full min-w-[400px]">
           <thead>
             <tr className="border-b border-gray-100">
               {['Class', 'Status', 'Present / Total', 'Action'].map((h, i) => (

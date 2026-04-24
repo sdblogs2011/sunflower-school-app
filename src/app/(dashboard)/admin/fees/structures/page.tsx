@@ -55,7 +55,7 @@ export default async function StructuresPage() {
       <div className="bg-white rounded-xl border border-gray-100 p-6 mb-5">
         <h2 className="text-base font-semibold text-gray-800 mb-4">Create New Structure</h2>
         <form action={createFeeStructure} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelCls}>Structure Name <span className="text-red-400">*</span></label>
               <input name="name" required className={inputCls} placeholder="e.g. Annual Fee 2025-26" />
@@ -68,7 +68,7 @@ export default async function StructuresPage() {
               </select>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelCls}>Total Amount (₹) <span className="text-red-400">*</span></label>
               <input name="total_amount" type="number" required min="1" step="0.01" className={inputCls} placeholder="e.g. 12000" />

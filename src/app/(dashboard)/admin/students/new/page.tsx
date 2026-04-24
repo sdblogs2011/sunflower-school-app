@@ -40,7 +40,7 @@ export default async function NewStudentPage() {
 
       <div className="bg-white rounded-xl border border-gray-100 p-6">
         <form action={createStudent} className="space-y-5">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelCls}>Admission Number <span className="text-red-400">*</span></label>
               <input name="admission_number" required className={inputCls} placeholder="e.g. 2025001" />
@@ -61,7 +61,7 @@ export default async function NewStudentPage() {
             <input name="full_name" required className={inputCls} placeholder="Student's full name" />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelCls}>Date of Birth</label>
               <input name="date_of_birth" type="date" className={inputCls} />
@@ -77,7 +77,7 @@ export default async function NewStudentPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelCls}>Roll Number</label>
               <input name="roll_number" type="number" className={inputCls} placeholder="Optional" />

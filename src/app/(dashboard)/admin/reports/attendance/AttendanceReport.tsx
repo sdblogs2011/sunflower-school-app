@@ -78,7 +78,7 @@ export default function AttendanceReport({ rows, classSections, currentClass, da
           <p className="text-sm text-gray-400">Select a class and date range to generate the report.</p>
         </div>
       ) : (
-        <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
+        <div className="bg-white rounded-xl border border-gray-100 overflow-x-auto">
           <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
             <div>
               <p className="text-sm font-semibold text-gray-800">{className}</p>

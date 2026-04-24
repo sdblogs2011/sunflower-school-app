@@ -43,7 +43,7 @@ export default function ExamDetail({
       {showAdd && (
         <div className="bg-white rounded-xl border border-gray-100 p-5">
           <form action={async (fd) => { await addExamSubject(examId, fd); setShowAdd(false) }}
-            className="grid grid-cols-2 gap-3">
+            className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className={labelCls}>Class *</label>
               <select name="class_section_id" required className={inputCls}>
@@ -84,8 +84,8 @@ export default function ExamDetail({
           <p className="text-sm text-gray-400">No subjects added yet. Add a class × subject combination to start entering marks.</p>
         </div>
       ) : (
-        <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
-          <table className="w-full">
+        <div className="bg-white rounded-xl border border-gray-100 overflow-x-auto">
+          <table className="w-full min-w-[600px]">
             <thead>
               <tr className="border-b border-gray-100 bg-gray-50">
                 {['Class', 'Subject', 'Date', 'Max', 'Pass', 'Marks Entered', ''].map(h => (
