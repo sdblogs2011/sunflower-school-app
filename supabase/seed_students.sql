@@ -20,7 +20,7 @@ ON CONFLICT DO NOTHING;
 
 -- ── Enrollments (each student → matching class for their age) ─
 INSERT INTO student_enrollments (student_id, class_section_id, academic_session_id, roll_number)
-SELECT s.id, cs.id, sess.id, s.roll
+SELECT s.id::uuid, cs.id, sess.id, s.roll
 FROM (VALUES
   ('00000000-0000-0000-0003-000000000001', 'LKG',      1),
   ('00000000-0000-0000-0003-000000000002', 'LKG',      2),
