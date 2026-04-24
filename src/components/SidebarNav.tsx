@@ -17,6 +17,7 @@ const NAV_ITEMS: Record<UserRole, { label: string; href: string; icon: string }[
     { label: 'Homework', href: '/admin/homework', icon: '📚' },
     { label: 'Resources', href: '/admin/resources', icon: '🗂️' },
     { label: 'Reports', href: '/admin/reports', icon: '📋' },
+    { label: 'Accounts', href: '/admin/accounts', icon: '👤' },
   ],
   admin: [
     { label: 'Dashboard', href: '/admin', icon: '📊' },
