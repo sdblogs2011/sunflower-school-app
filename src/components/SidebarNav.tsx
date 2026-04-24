@@ -8,13 +8,13 @@ import type { UserProfile, UserRole } from '@/lib/types'
 const NAV_ITEMS: Record<UserRole, { label: string; href: string; icon: string }[]> = {
   principal: [
     { label: 'Dashboard', href: '/principal', icon: '📊' },
-    { label: 'Students', href: '/principal/students', icon: '🎓' },
-    { label: 'Staff', href: '/principal/staff', icon: '👩‍🏫' },
+    { label: 'Students', href: '/admin/students', icon: '🎓' },
+    { label: 'Staff', href: '/admin/staff', icon: '👩‍🏫' },
     { label: 'Academic Structure', href: '/admin/academic', icon: '🏫' },
-    { label: 'Attendance', href: '/principal/attendance', icon: '✅' },
-    { label: 'Fees', href: '/principal/fees', icon: '💰' },
-    { label: 'Notices', href: '/principal/notices', icon: '📢' },
-    { label: 'Reports', href: '/principal/reports', icon: '📋' },
+    { label: 'Attendance', href: '/admin/attendance', icon: '✅' },
+    { label: 'Fees', href: '/admin/fees', icon: '💰' },
+    { label: 'Notices', href: '/admin/notices', icon: '📢' },
+    { label: 'Reports', href: '/admin/reports', icon: '📋' },
   ],
   admin: [
     { label: 'Dashboard', href: '/admin', icon: '📊' },
