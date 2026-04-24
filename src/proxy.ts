@@ -2,7 +2,7 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import { ROLE_REDIRECTS, type UserRole } from '@/lib/types'
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
 
   const supabase = createServerClient(
@@ -30,12 +30,8 @@ export async function middleware(request: NextRequest) {
   // Public routes
   if (pathname.startsWith('/login') || pathname.startsWith('/api/auth')) {
     if (user) {
-      // Already logged in — redirect to their dashboard
       const { data: profile } = await supabase
-        .from('user_profiles')
-        .select('role')
-        .eq('user_id', user.id)
-        .single()
+        .from('user_profiles').select('role').eq('user_id', user.id).single()
       if (profile) {
         return NextResponse.redirect(
           new URL(ROLE_REDIRECTS[profile.role as UserRole], request.url)
@@ -50,12 +46,8 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 
-  // Role guard: ensure user only accesses their own dashboard root
   const { data: profile } = await supabase
-    .from('user_profiles')
-    .select('role')
-    .eq('user_id', user.id)
-    .single()
+    .from('user_profiles').select('role').eq('user_id', user.id).single()
 
   if (!profile) {
     return NextResponse.redirect(new URL('/login', request.url))
@@ -70,9 +62,7 @@ export async function middleware(request: NextRequest) {
 
   // Principal can access both /principal/* and /admin/* routes
   const allowedPrefixes =
-    role === 'principal'
-      ? ['/principal', '/admin']
-      : [allowedRoot]
+    role === 'principal' ? ['/principal', '/admin'] : [allowedRoot]
 
   const isAllowed = allowedPrefixes.some(prefix => pathname.startsWith(prefix))
   if (!isAllowed) {
