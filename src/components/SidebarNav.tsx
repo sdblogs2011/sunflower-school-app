@@ -19,7 +19,7 @@ const NAV_ITEMS: Record<UserRole, { label: string; href: string; icon: string }[
     { label: 'Dashboard', href: '/admin', icon: '📊' },
     { label: 'Students', href: '/admin/students', icon: '🎓' },
     { label: 'Staff', href: '/admin/staff', icon: '👩‍🏫' },
-    { label: 'Classes', href: '/admin/classes', icon: '🏫' },
+    { label: 'Academic Structure', href: '/admin/academic', icon: '🏫' },
     { label: 'Attendance', href: '/admin/attendance', icon: '✅' },
     { label: 'Fees', href: '/admin/fees', icon: '💰' },
     { label: 'Notices', href: '/admin/notices', icon: '📢' },

@@ -61,12 +61,21 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 
-  const allowedRoot = ROLE_REDIRECTS[profile.role as UserRole]
-  if (!pathname.startsWith(allowedRoot) && pathname !== '/') {
+  const role = profile.role as UserRole
+  const allowedRoot = ROLE_REDIRECTS[role]
+
+  if (pathname === '/') {
     return NextResponse.redirect(new URL(allowedRoot, request.url))
   }
 
-  if (pathname === '/') {
+  // Principal can access both /principal/* and /admin/* routes
+  const allowedPrefixes =
+    role === 'principal'
+      ? ['/principal', '/admin']
+      : [allowedRoot]
+
+  const isAllowed = allowedPrefixes.some(prefix => pathname.startsWith(prefix))
+  if (!isAllowed) {
     return NextResponse.redirect(new URL(allowedRoot, request.url))
   }
 
